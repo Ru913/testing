@@ -1,70 +1,41 @@
-# Beszel
+# @barchart/common-node-js
 
-Beszel is a lightweight server monitoring platform that includes Docker statistics, historical data, and alert functions.
+[![AWS CodeBuild](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiMml2V3dLRC83RHBaTEw3WDNjN3JCUVRWLzJaVGQyZmJGbnk0SlByQ0hkbU5EMXNESHBrZTFVTHVtdmVvMFBpUlZORzRVUTBWbUltenBsaktqNUJWU0d3PSIsIml2UGFyYW1ldGVyU3BlYyI6IjRNVkVPZjU2STdjSnBBSE4iLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)](https://github.com/barchart/common-node-js)
+[![NPM](https://img.shields.io/npm/v/@barchart/common-node-js)](https://www.npmjs.com/package/@barchart/common-node-js)
 
-It has a friendly web interface, simple configuration, and is ready to use out of the box. It supports automatic backup, multi-user, OAuth authentication, and API access.
+A *public* library of JavaScript utilities — suitable for use in both Node.js environments.
 
-[![agent Docker Image Size](https://img.shields.io/docker/image-size/henrygd/beszel-agent/latest?logo=docker&label=agent%20image%20size)](https://hub.docker.com/r/henrygd/beszel-agent)
-[![hub Docker Image Size](https://img.shields.io/docker/image-size/henrygd/beszel/latest?logo=docker&label=hub%20image%20size)](https://hub.docker.com/r/henrygd/beszel)
-[![MIT license](https://img.shields.io/github/license/henrygd/beszel?color=%239944ee)](https://github.com/henrygd/beszel/blob/main/LICENSE)
-[![Crowdin](https://badges.crowdin.net/beszel/localized.svg)](https://crowdin.com/project/beszel)
+### Overview
 
-![Screenshot of Beszel dashboard and system page, side by side. The dashboard shows metrics from multiple connected systems, while the system page shows detailed metrics for a single system.](https://henrygd-assets.b-cdn.net/beszel/screenshot-new.png)
+#### Features
 
-## Features
+* Promise-based convenience wrappers for the AWS services (e.g. DynamoDB, S3, SES, SNS, SQS, more)
+* Promise-based convenience wrappers for relational dB access (PostgreSQL, MySQL)
+* Advanced utilities for working with Node.js streams
+* A workflow engine based on a priority queue
+* Pluggable asynchronous message bus for request-response (including an Amazon SQS implementation)
+* Pluggable asynchronous message bus for publish-subscribe (including an Amazon SNS/SQS implementation)
+* Abstraction for HTTP servers with REST and Socket.IO endpoints (using Express)
+* Browse the code...
 
-- **Lightweight**: Smaller and less resource-intensive than leading solutions.
-- **Simple**: Easy setup with little manual configuration required.
-- **Docker stats**: Tracks CPU, memory, and network usage history for each container.
-- **Alerts**: Configurable alerts for CPU, memory, disk, bandwidth, temperature, load average, and status.
-- **Multi-user**: Users manage their own systems. Admins can share systems across users.
-- **OAuth / OIDC**: Supports many OAuth2 providers. Password auth can be disabled.
-- **Automatic backups**: Save to and restore from disk or S3-compatible storage.
-<!-- - **REST API**: Use or update your data in your own scripts and applications. -->
+#### Companion Library
 
-## Architecture
+A companion library called [@barchart/common-js](https://github.com/barchart/barchart-common-js) contains a more general set of utilities which are suitable for either Node.js or browser environments.
 
-Beszel consists of two main components: the **hub** and the **agent**.
+### Development
 
-- **Hub**: A web application built on [PocketBase](https://pocketbase.io/) that provides a dashboard for viewing and managing connected systems.
-- **Agent**: Runs on each system you want to monitor and communicates system metrics to the hub.
+#### Documentation
 
-## Getting started
+The code is documented with [JSDoc](http://usejsdoc.org/). This will be used as the basis for formal documentation (coming soon).
 
-The [quick start guide](https://beszel.dev/guide/getting-started) and other documentation is available on our website, [beszel.dev](https://beszel.dev). You'll be up and running in a few minutes.
+#### Package Managers
 
-## Screenshots
+This library has been published as a *public* module to NPM as [@barchart/common-node-js](https://www.npmjs.com/package/@barchart/common-node-js).
 
-![Dashboard](https://beszel.dev/image/dashboard.png)
-![System page](https://beszel.dev/image/system-full.png)
-![Notification Settings](https://beszel.dev/image/settings-notifications.png)
+```shell
+npm install @barchart/common-node-js -S
+```
 
-## Supported metrics
+#### License
 
-- **CPU usage** - Host system and Docker / Podman containers.
-- **Memory usage** - Host system and containers. Includes swap and ZFS ARC.
-- **Disk usage** - Host system. Supports multiple partitions and devices.
-- **Disk I/O** - Host system. Supports multiple partitions and devices.
-- **Network usage** - Host system and containers.
-- **Load average** - Host system.
-- **Temperature** - Host system sensors.
-- **GPU usage / power draw** - Nvidia, AMD, and Intel.
-- **Battery** - Host system battery charge.
-- **Containers** - Status and metrics of all running Docker / Podman containers.
-- **S.M.A.R.T.** - Host system disk health.
-
-## Help and discussion
-
-Please search existing issues and discussions before opening a new one. I try my best to respond, but may not always have time to do so.
-
-#### Bug reports and feature requests
-
-Bug reports and feature requests can be posted on [GitHub issues](https://github.com/henrygd/beszel/issues).
-
-#### Support and general discussion
-
-Support requests and general discussion can be posted on [GitHub discussions](https://github.com/henrygd/beszel/discussions) or the community-run [Matrix room](https://matrix.to/#/#beszel:matrix.org): `#beszel:matrix.org`.
-
-## License
-
-Beszel is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This software is provided under the MIT license.
